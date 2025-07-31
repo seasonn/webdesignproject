@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+nav {
+  position: fixed;
+}
+nav a.navbar-brand {
+  font-family: "Anton", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+main div iframe {
+  pointer-events: none;
+}/*# sourceMappingURL=style.css.map */
