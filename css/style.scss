@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+nav {
+    position: fixed;
+
+    a.navbar-brand {
+        font-family: "Anton", sans-serif;
+        font-weight: 500;
+        font-size: 2rem;
+    }
+}
+
+main {
+    div.indexMainPic {
+        background-image: url('../images/pexels-carlos-santos-892832-3672355.jpg');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 70vh;
+        position: relative;
+        filter: saturate(0.2);
+        h2{
+            font-family: 'Anton', sans-serif;
+            position: absolute;
+            font-size: 2.25em;
+            bottom: 0.5em;
+            right: 2em;
+            color: #fffe;
+            text-shadow: 0 0 3px #fffa;
+        }
+        h1{
+            
+        }
+    }
+}
