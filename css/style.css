@@ -17,12 +17,12 @@ main div.indexMainPic {
   position: relative;
   filter: saturate(0.2);
 }
-main div.indexMainPic p {
+main div.indexMainPic h2 {
   font-family: "Anton", sans-serif;
   position: absolute;
-  font-size: 2em;
-  bottom: 0;
+  font-size: 2.25em;
+  bottom: 0.5em;
   right: 2em;
-  color: rgba(255, 255, 255, 0.6666666667);
+  color: rgba(255, 255, 255, 0.9333333333);
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.6666666667);
 }/*# sourceMappingURL=style.css.map */
