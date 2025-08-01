@@ -8,6 +8,19 @@ nav a.navbar-brand {
   font-size: 2rem;
 }
 
-main div iframe {
-  pointer-events: none;
+main div.indexMainPic {
+  background-image: url("../images/pexels-carlos-santos-892832-3672355.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 70vh;
+  position: relative;
+  filter: saturate(0.2);
+}
+main div.indexMainPic p {
+  position: absolute;
+  font-size: 2em;
+  bottom: 0;
+  right: 0;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
