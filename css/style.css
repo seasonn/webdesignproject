@@ -18,9 +18,11 @@ main div.indexMainPic {
   filter: saturate(0.2);
 }
 main div.indexMainPic p {
+  font-family: "Anton", sans-serif;
   position: absolute;
   font-size: 2em;
   bottom: 0;
-  right: 0;
-  color: white;
+  right: 2em;
+  color: rgba(255, 255, 255, 0.6666666667);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.6666666667);
 }/*# sourceMappingURL=style.css.map */
