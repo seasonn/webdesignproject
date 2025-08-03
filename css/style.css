@@ -1,28 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-nav {
-  position: fixed;
-}
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 nav a.navbar-brand {
   font-family: "Anton", sans-serif;
   font-weight: 500;
   font-size: 2rem;
 }
+nav h5.offcanvas-title {
+  font-family: "Anton", "Noto Sans TC", sans-serif;
+}
+nav div.offcanvas {
+  font-family: "Noto Sans TC", sans-serif;
+}
+nav div.offcanvas div.offcanvas-body ul li {
+  font-size: 1.25em;
+  list-style-type: none;
+  padding: 0.5em 0;
+}
+nav div.offcanvas div.offcanvas-body ul li a {
+  text-decoration: none;
+  color: #000;
+}
+nav div.offcanvas div.offcanvas-body ul li a:hover {
+  color: #a52a2a;
+}
+nav div.offcanvas div.offcanvas-body hr {
+  color: #330f0f;
+}
 
+main {
+  border-bottom: 1px solid rgba(119, 119, 119, 0.3333333333);
+  overflow-x: hidden;
+}
 main div.indexMainPic {
   background-image: url("../images/pexels-carlos-santos-892832-3672355.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 70vh;
+  min-height: 90vh;
   position: relative;
   filter: saturate(0.2);
 }
-main div.indexMainPic h2 {
-  font-family: "Anton", sans-serif;
+main div.picText {
   position: absolute;
-  font-size: 2.25em;
-  bottom: 0.5em;
-  right: 2em;
+  bottom: 10%;
+  left: 5vw;
+}
+main div.picText h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 2.5em;
   color: rgba(255, 255, 255, 0.9333333333);
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.6666666667);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.7333333333), 0 0 1px #000;
+}
+main div.product h1 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+}
+main div.product div.card {
+  transition: 0.3s ease 0s;
+}
+main div.product div.card:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  font-size: 1.2em;
 }/*# sourceMappingURL=style.css.map */

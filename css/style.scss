@@ -1,35 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 nav {
-    position: fixed;
-
     a.navbar-brand {
         font-family: "Anton", sans-serif;
         font-weight: 500;
         font-size: 2rem;
     }
+
+    h5.offcanvas-title {
+        font-family: 'Anton', 'Noto Sans TC', sans-serif;
+    }
+
+    div.offcanvas {
+        font-family: 'Noto Sans TC', sans-serif;
+
+        div.offcanvas-body {
+            ul {
+                li {
+                    font-size: 1.25em;
+                    list-style-type: none;
+                    padding: 0.5em 0;
+
+                    a {
+                        text-decoration: none;
+                        color: #000;
+
+                        &:hover {
+                            color: #a52a2a;
+                        }
+                    }
+                }
+            }
+            hr {
+                color: #330f0f;
+            }
+        }
+    }
 }
 
 main {
+    border-bottom: 1px solid #7775;
+    overflow-x: hidden;
     div.indexMainPic {
         background-image: url('../images/pexels-carlos-santos-892832-3672355.jpg');
         background-position: center top;
         background-repeat: no-repeat;
         background-size: cover;
-        min-height: 70vh;
+        min-height: 90vh;
         position: relative;
         filter: saturate(0.2);
-        h2{
+    }
+
+    div.picText {
+        position: absolute;
+        bottom: 10%;
+        left: 5vw;
+
+        h2 {
             font-family: 'Anton', sans-serif;
-            position: absolute;
-            font-size: 2.25em;
-            bottom: 0.5em;
-            right: 2em;
+            font-size: 2.5em;
             color: #fffe;
-            text-shadow: 0 0 3px #fffa;
-        }
-        h1{
-            
+            text-shadow: 0 0 4px #fffb,
+                0 0 1px #000;
         }
     }
+
+    div.product {
+
+        h1 {
+            font-family: "Noto Sans TC", sans-serif;
+            font-size: 2em;
+            font-weight: 600;
+        }
+        div.card{
+            transition: 0.3s ease 0s;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+    }
+
+}
+
+footer {
+    font-size: 1.2em;
 }
