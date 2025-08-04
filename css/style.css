@@ -2,9 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 button#backToTop {
   position: fixed;
-  bottom: 20px;
-  right: 40px;
+  bottom: 4vh;
+  right: 6vw;
   display: none;
+  z-index: 10;
 }
 
 nav {
