@@ -1,47 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
+button#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    display: none;
+}
+
 nav {
+    font-family: 'Noto Sans TC', sans-serif;
+
     a.navbar-brand {
         font-family: "Anton", sans-serif;
         font-weight: 500;
         font-size: 2rem;
     }
 
-    h5.offcanvas-title {
-        font-family: 'Anton', 'Noto Sans TC', sans-serif;
-    }
+    font-size: 1.25em;
+    padding: 0.5em 0;
 
-    div.offcanvas {
-        font-family: 'Noto Sans TC', sans-serif;
+    div.navbar-nav {
+        a {
+            text-decoration: none;
+            color: #000;
 
-        div.offcanvas-body {
-            ul {
-                li {
-                    font-size: 1.25em;
-                    list-style-type: none;
-                    padding: 0.5em 0;
-
-                    a {
-                        text-decoration: none;
-                        color: #000;
-
-                        &:hover {
-                            color: #a52a2a;
-                        }
-                    }
-                }
-            }
-            hr {
-                color: #330f0f;
+            &:hover {
+                color: #a52a2a;
             }
         }
+    }
+
+    hr {
+        color: #330f0f;
     }
 }
 
 main {
     border-bottom: 1px solid #7775;
     overflow-x: hidden;
+
     div.indexMainPic {
         background-image: url('../images/pexels-carlos-santos-892832-3672355.jpg');
         background-position: center top;
@@ -68,18 +66,21 @@ main {
 
     div.product {
 
-        h1 {
+        h3 {
             font-family: "Noto Sans TC", sans-serif;
             font-size: 2em;
             font-weight: 600;
         }
-        div.card{
-            transition: 0.3s ease 0s;
+
+        div.card {
+            transition: 0.3s transform ease 0s;
+
             &:hover {
-                transform: scale(1.05);
+                img {
+                    transform: scale(1.05);
+                }
             }
         }
-
     }
 
 }
