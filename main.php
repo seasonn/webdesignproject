@@ -1,3 +1,4 @@
+<?php require_once('connections/conn_db.php'); ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 

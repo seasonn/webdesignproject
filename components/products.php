@@ -3,6 +3,7 @@
     <div class="product">
         <h3 class="text-center my-3" id="">MIDI</h3>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            
             <div class="col">
                 <div class="card h-100 border-0">
                     <img src="product_img/djtechtoolsmidifightertwister.png" class="card-img-top" alt="...">

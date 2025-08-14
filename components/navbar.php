@@ -6,39 +6,16 @@
       <input class="form-control" type="search" placeholder="尋找商品......" aria-label="Search" />
       <button class="btn" type="submit"><i class="fas fa-magnifying-glass"></i></button>
     </form>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavList"
+      aria-controls="navbarNavList" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
-  <div class="container-fluid d-flex justify-content-around">
-    <div class="collapse navbar-collapse pb-2" id="navbarNavAltMarkup">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse pb-2" id="navbarNavList">
       <div class="navbar-nav d-sm-flex w-100 justify-content-between flex-sm-row">
-        <div class="d-md-flex gap-3 mx-3">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              合成器
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">類比合成器</a></li>
-              <li><a class="dropdown-item" href="#">數位合成器</a></li>
-              <li><a class="dropdown-item" href="#">複音合成器</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              品牌
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Korg</a></li>
-              <li><a class="dropdown-item" href="#">Novation</a></li>
-              <li><a class="dropdown-item" href="#">Waldorf</a></li>
-            </ul>
-          </li>
-
+        <div class="d-md-flex w-75 gap-3 mx-3">
+          <?php multiList(); ?>
         </div>
         <hr class="d-sm-none gap-2 mb-2">
         <div class="text-sm-end">
@@ -50,3 +27,28 @@
     </div>
   </div>
 </nav>
+
+<?php
+function multiList()
+{
+  global $conn;
+  $SQLstring = "SELECT * FROM pyclass WHERE level=1 ORDER BY sort";
+  $pyclass01 = $conn->query($SQLstring);
+?>
+  <?php while ($pyclass01_Rows = $pyclass01->fetch()) { ?>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <?= $pyclass01_Rows['cname'] ?>
+      </a>
+      <?php
+      $SQLstring = sprintf("SELECT * FROM pyclass WHERE level=2 AND uplink=%d ORDER BY sort", $pyclass01_Rows['classid']);
+      $pyclass02 = $conn->query($SQLstring);
+      ?>
+      <ul class="dropdown-menu">
+        <?php while ($pyclass02_Rows = $pyclass02->fetch()) { ?>
+          <li><a class="dropdown-item" href="main.php?classid=<?= $pyclass02_Rows['classid']; ?>"><?= $pyclass02_Rows['cname']; ?></a></li>
+        <?php }; ?>
+      </ul>
+    </li>
+  <?php }; ?>
+<?php }; ?>
