@@ -32,6 +32,7 @@ nav hr {
 main {
   border-bottom: 1px solid rgba(119, 119, 119, 0.3333333333);
   overflow-x: hidden;
+  min-height: 100vh;
 }
 main div.indexMainPic {
   background-image: url("../images/pexels-carlos-santos-892832-3672355.jpg");
@@ -77,8 +78,9 @@ footer {
 }
 footer a {
   text-decoration: none;
-  color: #000;
+  color: #999;
+  height: 100%;
 }
 footer a:hover {
-  color: #521515;
+  color: #a52a2a;
 }/*# sourceMappingURL=style.css.map */

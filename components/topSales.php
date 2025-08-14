@@ -1,44 +1,40 @@
-<div class="container mt-5">
+<div class="container mt-5 mb-4">
     <div hidden>source:https://www.thomann.de/intl/index.html</div>
     <div class="product">
         <h3 class="text-center my-3" id="">熱門商品</h3>
-        <div class="row gx-3 mb-3">
-            <div class="col-md-3">
-                <div class="card border-0 mx-1">
-                    <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_39/398386/11532754_800.jpg"
-                        alt="" class="card-img-top">
-                    <div class="card-body p-2">
-                        <p class="card-text">Korg microKORG S</p>
-                        <p class="card-text">13,499 TWD <button class="btn"></button></p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="../product_img/korgmicroKORGS_800.jpg" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Korg microKORG S</h5>
+                        <p class="card-text">13,499 TWD</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card border-0 mx-1">
-                    <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_11/112756/15579015_800.jpg"
-                        alt="" class="card-img-top">
-                    <div class="card-body p-2">
-                        <p class="card-text">Waldorf Blofeld</p>
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="../product_img/korgms-20mini_800.jpg" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Waldorf Blofeld</h5>
                         <p class="card-text">16,699 TWD</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card border-0 mx-1">
-                    <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_29/294771/10354002_800.jpg"
-                        alt="" class="card-img-top">
-                    <div class="card-body p-2">
-                        <p class="card-text">Novation MiniNova</p>
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="../product_img/novationmininova_800.jpg" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Novation MiniNova</h5>
                         <p class="card-text">10,959 TWD</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card border-0 mx-1">
-                    <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_30/305808/8158252_800.jpg"
-                        alt="" class="card-img-top">
-                    <div class="card-body p-2">
-                        <p class="card-text">Korg MS-20 mini</p>
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="../product_img/korgms-20mini_800.jpg" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Korg MS-20 mini</h5>
                         <p class="card-text">16,055 TWD</p>
                     </div>
                 </div>

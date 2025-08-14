@@ -42,6 +42,7 @@ nav {
 main {
     border-bottom: 1px solid #7775;
     overflow-x: hidden;
+    min-height: 100vh;
 
     div.indexMainPic {
         background-image: url('../images/pexels-carlos-santos-892832-3672355.jpg');
@@ -96,12 +97,14 @@ main {
 footer {
     font-size: 1.2em;
     font-weight: 600;
+
     a {
         text-decoration: none;
-        color: #000;
+        color: #999;
+        height: 100%;
 
         &:hover {
-            color: #521515;
+            color: #a52a2a;
         }
     }
 }
