@@ -1,41 +1,41 @@
 <div class="container mt-5 mb-4">
-    <div hidden>source:https://www.thomann.de/intl/index.html</div>
+    <div hidden>source:https://digilog.tw/</div>
     <div class="product">
-        <h3 class="text-center my-3" id="">category</h3>
+        <h3 class="text-center my-3" id="">MIDI</h3>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
             <div class="col">
                 <div class="card h-100 border-0">
-                    <img src="../product_img/korgmicroKORGS_800.jpg" class="card-img-top" alt="...">
+                    <img src="product_img/djtechtoolsmidifightertwister.png" class="card-img-top" alt="...">
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Korg microKORG S</h5>
-                        <p class="card-text">13,499 TWD</p>
+                        <p class="card-title">DJ TechTools Midi Fighter Twister MIDI 控制器</p>
+                        <p class="card-text">8790 TWD</p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100 border-0">
-                    <img src="../product_img/waldorfblofeld_800.jpg" class="card-img-top" alt="...">
+                    <img src="product_img/NovationLaunchControlXLMKIIMIDI.png" class="card-img-top" alt="...">
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Waldorf Blofeld</h5>
-                        <p class="card-text">16,699 TWD</p>
+                        <p class="card-title">Novation Launch Control XL MKII MIDI 控制器</p>
+                        <p class="card-text">6500 TWD</p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100 border-0">
-                    <img src="../product_img/novationmininova_800.jpg" class="card-img-top" alt="...">
+                    <img src="product_img/PreSonusFaderPort8V2DAW.png" class="card-img-top" alt="...">
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Novation MiniNova</h5>
-                        <p class="card-text">10,959 TWD</p>
+                        <p class="card-title">PreSonus FaderPort 8 V2 DAW 控制器</p>
+                        <p class="card-text">21500 TWD</p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100 border-0">
-                    <img src="../product_img/korgms-20mini_800.jpg" class="card-img-top" alt="...">
+                    <img src="product_img/PreSonusFaderportV2DAW.png" class="card-img-top" alt="...">
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Korg MS-20 mini</h5>
-                        <p class="card-text">16,055 TWD</p>
+                        <p class="card-title">PreSonus Faderport V2 DAW 控制器</p>
+                        <p class="card-text">7900 TWD</p>
                     </div>
                 </div>
             </div>
