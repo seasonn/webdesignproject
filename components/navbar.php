@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top flex-column p-0">
-  <div class="container-fluid w-100 d-flex align-items-center py-2">
+  <div class="container-fluid w-100 d-flex align-items-center">
     <a class="navbar-brand text-md-start text-center ms-sm-5 col-12 col-sm-3" href="index.php">synth</a>
     </button>
     <form class="d-flex col-9 col-sm-5 ms-3" role="search">
       <input class="form-control" type="search" placeholder="尋找商品......" aria-label="Search" />
       <button class="btn" type="submit"><i class="fas fa-magnifying-glass"></i></button>
     </form>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavList"
+    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavList"
       aria-controls="navbarNavList" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

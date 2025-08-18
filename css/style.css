@@ -10,8 +10,7 @@ button#backToTop {
 
 nav {
   font-family: "Noto Sans TC", sans-serif;
-  font-size: 1.25em;
-  padding: 0.5em 0;
+  font-size: 1.2em;
 }
 nav a.navbar-brand {
   font-family: "Anton", sans-serif;
@@ -32,14 +31,14 @@ nav hr {
 main {
   border-bottom: 1px solid rgba(119, 119, 119, 0.3333333333);
   overflow-x: hidden;
-  min-height: 90vh;
+  min-height: 95vh;
 }
 main div.indexMainPic {
   background-image: url("../images/pexels-carlos-santos-892832-3672355.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 90vh;
+  min-height: 95vh;
   position: relative;
   filter: saturate(0.2);
 }
@@ -70,6 +69,12 @@ main div.product div.card:hover {
 main div.product div.card:hover img {
   transition: 0.3s transform ease 0s;
   transform: scale(1.02);
+}
+main div.goods div.card div.col-4 img {
+  transition: 0.2s box-shadow ease;
+}
+main div.goods div.card div.col-4 img:hover {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1333333333);
 }
 
 footer {

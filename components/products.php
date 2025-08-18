@@ -11,7 +11,13 @@
         }
         $startRow_rs = $pageNum_rs * $maxRows_rs;
 
-        if (isset($_GET['classid'])) {
+        if (isset($_GET['search_name'])) {
+            //keyword search
+            $queryFirst = sprintf("SELECT * FROM product, product_img,pyclass WHERE p_open=1 AND product_img.sort=1 AND product.p_id=product_img.p_id AND product.classid=pyclass.classid AND product.p_name LIKE '%s' ORDER BY product.p_id DESC", '%' . $_GET['search_name'] . '%');
+        } elseif (isset($_GET['level']) && $_GET['level'] == 1) {
+            //level1 class search
+            $queryFirst = sprintf("SELECT * FROM product, product_img,pyclass WHERE p_open=1 AND product_img.sort=1 AND product.p_id=product_img.p_id AND product.classid=pyclass.classid AND pyclass.uplink='%d' ORDER BY product.p_id DESC", $_GET['classid']);
+        } elseif (isset($_GET['classid'])) {
             //使用產品類別查詢
             $queryFirst = sprintf("SELECT * FROM product, product_img WHERE p_open=1 AND product_img.sort=1 AND product.p_id=product_img.p_id AND product.classid='%d' ORDER BY product.p_id DESC", $_GET['classid']);
         } else {
@@ -22,20 +28,24 @@
         $query = sprintf("%s LIMIT %d, %d", $queryFirst, $startRow_rs, $maxRows_rs);
         $pList01 = $conn->query($query);
         ?>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-            <?php
-            while ($pList01_Rows = $pList01->fetch()) { ?>
-                <div class="col">
-                    <div class="card h-100 border-0">
-                        <img src="./product_img/<?= $pList01_Rows['img_file']; ?>" class="card-img-top" alt="<?= $pList01_Rows['p_name']; ?>" title="<?= $pList01_Rows['p_name']; ?>">
-                        <div class="card-body d-flex flex-column justify-content-between">
-                            <p class="card-title"><?= $pList01_Rows['p_name']; ?></p>
-                            <p class="card-text">NT<?= $pList01_Rows['p_price']; ?></p>
+        <?php if ($pList01->rowCount() != 0) { ?>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <?php
+                while ($pList01_Rows = $pList01->fetch()) { ?>
+                    <div class="col">
+                        <div class="card h-100 border-0">
+                            <a href="goods.php?p_id=<?= $pList01_Rows['p_id']; ?>"><img src="./product_img/<?= $pList01_Rows['img_file']; ?>" class="card-img-top" alt="<?= $pList01_Rows['p_name']; ?>" title="<?= $pList01_Rows['p_name']; ?>"></a>
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="card-title"><?= $pList01_Rows['p_name']; ?></p>
+                                <p class="card-text">NT<?= $pList01_Rows['p_price']; ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php } ?>
-        </div>
+                <?php } ?>
+            </div>
+        <?php } else { ?>
+            <div class="alert alert-light text-center shadow shadow-sm">目前沒有相關商品</div>
+        <?php } ?>
         <div class="row mt-2">
             <?php
             if (isset($_GET['totalRows_rs'])) {

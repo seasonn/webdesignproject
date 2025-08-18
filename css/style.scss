@@ -11,6 +11,8 @@ button#backToTop {
 
 nav {
     font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.2em;
+    // line-height: 1.5em;
 
     a.navbar-brand {
         font-family: "Anton", sans-serif;
@@ -18,8 +20,6 @@ nav {
         font-size: 2rem;
     }
 
-    font-size: 1.25em;
-    padding: 0.5em 0;
 
     div.navbar-nav {
         li {
@@ -42,14 +42,14 @@ nav {
 main {
     border-bottom: 1px solid #7775;
     overflow-x: hidden;
-    min-height: 90vh;
+    min-height: 95vh;
 
     div.indexMainPic {
         background-image: url('../images/pexels-carlos-santos-892832-3672355.jpg');
         background-position: center top;
         background-repeat: no-repeat;
         background-size: cover;
-        min-height: 90vh;
+        min-height: 95vh;
         position: relative;
         filter: saturate(0.2);
     }
@@ -88,6 +88,15 @@ main {
                     transition: 0.3s transform ease 0s;
                     transform: scale(1.02);
                 }
+            }
+        }
+    }
+
+    div.goods {
+        div.card div.col-4 img {
+            transition: 0.2s box-shadow ease;
+            &:hover {
+                box-shadow: 0 0 3px #0002;
             }
         }
     }
