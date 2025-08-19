@@ -75,7 +75,6 @@ if (isset($_POST['fID'])) {
 </head>
 
 <body class="bg-primary">
-
    <div class="Nixon-login">
       <div class="container">
          <div class="row">
@@ -100,13 +99,9 @@ if (isset($_POST['fID'])) {
                               <?= $err ?>
                            </label>
                            <label class="pull-right">
-
                            </label>
-
                         </div>
                         <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">登入</button>
-
-
                      </form>
                   </div>
                </div>
@@ -114,7 +109,5 @@ if (isset($_POST['fID'])) {
          </div>
       </div>
    </div>
-
 </body>
-
 </html>

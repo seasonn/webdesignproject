@@ -16,8 +16,11 @@ if (isset($_GET['mode'])) {
     switch ($mode) {
         case "delete":
             $id = $_GET['id'];
-            $sql = "delete from admin where aid='$id'";
-            if ($result = $link->query($sql)) {
+            $sql = "delete from admin where aid=?";
+            $result = $link->prepare($sql);
+            $aid[] = $id;
+            
+            if ($result->execute($aid)) {
                 echo "<script>redirectDialog('admin.php','ID: $id 的資料已刪除!');</script>";
             }
             break;

@@ -8,7 +8,6 @@ if (isset($_POST['aid'])) {
     $aname = $_POST['aname'];
     $passwd = $_POST['passwd'];
     $sql = "select * from admin where aid='$aid'";
-
     $result = $link->query($sql);
     if ($row = $result->fetch()) {
         echo "<script>alert('管理者帳號已存在,無法新增')</script>";

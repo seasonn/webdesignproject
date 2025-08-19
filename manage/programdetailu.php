@@ -52,15 +52,12 @@ if (isset($_GET['id'])) {
                             <button type="submit" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"><i class="ti-check"></i>確認</button>
                             <a href="program.php"><button type="button" class="btn btn-default btn-flat btn-addon m-b-10 m-l-5"><i class="ti-close"></i>離開</button></a>
                         </div>
-
                     </div>
                     <div class="form-group">
-
                     </div>
                 </form>
             </div>
         </div>
-
     </div>
 </div><!-- /# column -->
 
