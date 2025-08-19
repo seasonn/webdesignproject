@@ -25,6 +25,7 @@ if (isset($_POST['classid'])) {
             $ext = explode('.', basename($filenames[$i])); //将文件名按 “.” 分割成数组
             $target = $id . $zdx . "." . array_pop($ext); //$id+$zdx
             $sql = "insert into product_img(p_id,img_file,sort) values ($id,'$target',$zdx)";
+            
             $link->query($sql);
 
             move_uploaded_file($filetmps[$i], "../product_img/" . $target); //tmp_name 為上傳檔案的臨時位置，將其移動到需要上傳的路径

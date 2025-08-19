@@ -73,41 +73,42 @@ if (isset($_GET['mode'])) {
 
         <div class="card-body">
             <table class="table table-responsive table-striped m-t-30">
+                <?php
+                $records_per_page = 3;  // 每一頁顯示的記錄筆數
+                $rc = 0;
+
+                //      echo "SELECT * FROM product".$varWhere;
+
+                if (isset($_GET['page'])) //目前頁數
+                {
+                    $page = $_GET['page'];
+                } else {
+                    $page = 1;
+                }
+
+                $sql = "SELECT count(*) as rowcount from product as p" . $varWhere;
+
+                $r = $link->query($sql);
+                $rw = $r->fetch();
+                $total_records = $rw['rowcount'];
+                $offset = ($page - 1) * $records_per_page; //指標偏移數  
+                $total_pages = ceil($total_records / $records_per_page);
+
+                $sql = "SELECT p.p_id,c.cname,p.p_name,p.classid FROM product as p left join pyclass as c  on p.classid=c.classid  $varWhere order by p_id LIMIT $offset, $records_per_page";
+                //   echo $sql;
+                $result = $link->query($sql);
+                ?>
                 <thead>
                     <tr style="border-top:1px solid #e7e7e7;">
                         <th>產品編號</th>
                         <th>產品簡稱</th>
                         <th>產品敘述</th>
                         <th>產品圖片</th>
-                        <th></th>
+                        <th>資料筆數:<?= $total_records ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $records_per_page = 3;  // 每一頁顯示的記錄筆數
-                    $rc = 0;
-
-                    //      echo "SELECT * FROM product".$varWhere;
-
-                    if (isset($_GET['page'])) //目前頁數
-                    {
-                        $page = $_GET['page'];
-                    } else {
-                        $page = 1;
-                    }
-
-                    $sql = "SELECT count(*) as rowcount from product as p" . $varWhere;
-
-                    $r = $link->query($sql);
-                    $rw = $r->fetch();
-                    $total_records = $rw['rowcount'];
-                    $offset = ($page - 1) * $records_per_page; //指標偏移數  
-                    $total_pages = ceil($total_records / $records_per_page);
-
-                    $sql = "SELECT p.p_id,c.cname,p.p_name,p.classid FROM product as p left join pyclass as c  on p.classid=c.classid  $varWhere order by p_id LIMIT $offset, $records_per_page";
-                    //   echo $sql;
-                    $result = $link->query($sql);
-
                     while ($rc < $records_per_page and $row = $result->fetch()) {
                         $sql = "SELECT  img_file from product_img where p_id=" . $row['p_id'];
                         //    echo $sql;

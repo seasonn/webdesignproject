@@ -30,15 +30,15 @@ $aname = $row['aname'];
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
-    <link rel="shortcut icon" href="logo/fav.png">
+    <link rel="shortcut icon" href="logo/logosmall.png">
     <!-- Retina iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="144x144" href="logo/fav.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="logo/logosmall.png">
     <!-- Retina iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="114x114" href="logo/fav.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="logo/logosmall.png">
     <!-- Standard iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="72x72" href="logo/fav.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="logo/logosmall.png">
     <!-- Standard iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="57x57" href="logo/fav.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="logo/logosmall.png">
 
     <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
     <link href="assets/css/lib/mmc-chat.css" rel="stylesheet" />
@@ -110,7 +110,7 @@ $aname = $row['aname'];
     <div class="header">
         <div class="pull-left">
             <div class="logo">
-                <a href="index.html">
+                <a href="index.php">
                     <span style="font-size:18px;color:#fff; font-weight: bold;"><img id="logoImg" src="logo/logoSmall.png" data-logo_big="logo/logoSmall.png" data-logo_small="logo/logoSmall.png" />後台管理系統</span>
                 </a>
             </div>
