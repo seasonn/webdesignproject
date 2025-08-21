@@ -10,7 +10,7 @@ $id = "";
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "select * from admin where aid = ?";
-    $result = $link->prepare($sql);
+    $result = $conn->prepare($sql);
     $aid[] = $id;
     $result->execute($aid);
     $row = $result->fetch(PDO::FETCH_ASSOC);
@@ -20,11 +20,11 @@ if (isset($_POST['aid'])) {
     $sid = $_POST['sid'];
     include '../Connections/conn_db.php';
     $sql = "delete from mright where aid='$aid'";
-    $result = $link->query($sql);
+    $result = $conn->query($sql);
     // print_r($sid);
     for ($i = 0; $i < count($sid); $i++) {
         $sql = "insert into mright values('$aid','" . $sid[$i] . "')";
-        $result = $link->query($sql);
+        $result = $conn->query($sql);
     }
     echo "<script>alert('權限新增成功');</script>";
 }
@@ -48,7 +48,7 @@ if (isset($_POST['aid'])) {
                             <?php
                             include '../Connections/conn_db.php';
                             $sql = "select * from admin order by aid asc";
-                            $result = $link->query($sql);
+                            $result = $conn->query($sql);
                             ?>
                             <select size="1" name="aid" class="form-control" onchange="aidselect(this)">
                                 <option value="">請選擇管理者</option>
@@ -68,14 +68,14 @@ if (isset($_POST['aid'])) {
 
 
                             $sql = "select sid from mright where aid='$id'";
-                            $result3 = $link->query($sql);
+                            $result3 = $conn->query($sql);
                             $row5 = array();
                             while ($row3 = $result3->fetch()) {
                                 $row5[] = $row3['sid'];
                             }
                             $sql = "select * from programs order by sid asc";
 
-                            $result2 = $link->query($sql);
+                            $result2 = $conn->query($sql);
 
                             //                 print_r($row5);
                             while ($row2 = $result2->fetch()) {

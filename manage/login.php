@@ -5,11 +5,11 @@ function checkpasswddb($id, $pass)
    include "../Connections/conn_db.php";
    // $sql="select * from admin where aid='$id'";
    $sql = "select * from admin where aid = ?";
-   $result = $link->prepare($sql);
+   $result = $conn->prepare($sql);
    $aid[] = $id;
    $result->execute($aid);
    //$result=$statement->fetchAll(PDO::FETCH_ASSOC);
-   // $result=$link->query($sql);
+   // $result=$conn->query($sql);
    if ($row = $result->fetch(PDO::FETCH_ASSOC)) {
       if ($pass == $row['passwd'])
          return 0;

@@ -12,9 +12,9 @@ if (isset($_POST['classid'])) {
     //將資料寫入product資料表
     include '../Connections/conn_db.php';
     $sql = "insert into product(classid,p_name,p_intro,p_price,p_open,p_content) values ($classid,'$p_name','$p_intro',$p_price,$p_open,'$p_content')";
-    if ($link->query($sql)) {
+    if ($conn->query($sql)) {
         if (!empty($_FILES['file'])) {
-            $id = $link->lastInsertId();
+            $id = $conn->lastInsertId();
             $images = $_FILES['file']; // 獲取上傳的文件
             $filenames = $images['name']; // 文件名
             $filetmps = $images['tmp_name']; // 文件臨時路徑
@@ -26,7 +26,7 @@ if (isset($_POST['classid'])) {
             $target = $id . $zdx . "." . array_pop($ext); //$id+$zdx
             $sql = "insert into product_img(p_id,img_file,sort) values ($id,'$target',$zdx)";
             
-            $link->query($sql);
+            $conn->query($sql);
 
             move_uploaded_file($filetmps[$i], "../product_img/" . $target); //tmp_name 為上傳檔案的臨時位置，將其移動到需要上傳的路径
 
@@ -57,7 +57,7 @@ if (isset($_POST['classid'])) {
                             <?php
                             include '../Connections/conn_db.php';
                             $sql = "select * from pyclass where level=2 order by classid asc";
-                            $result = $link->query($sql)
+                            $result = $conn->query($sql)
                             ?>
                             <select size="1" name="classid" class="form-control">
                                 <?php

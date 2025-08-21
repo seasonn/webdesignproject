@@ -4,7 +4,7 @@
     </button>
     <form class="d-flex col-9 col-sm-5 ms-3" role="search">
       <input class="form-control" type="search" placeholder="尋找商品......" aria-label="Search" />
-      <button class="btn" type="submit"><i class="fas fa-magnifying-glass"></i></button>
+      <button class="btn" type="submit"><i class="bi bi-search"></i></button>
     </form>
     <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavList"
       aria-controls="navbarNavList" aria-expanded="false" aria-label="Toggle navigation">

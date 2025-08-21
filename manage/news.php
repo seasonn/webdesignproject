@@ -16,7 +16,7 @@ if (isset($_GET['mode'])) {
         $id = $_GET['id'];
         require 'db_open.php';
         $sql = "delete from news where nid=$id";
-        if ($result = mysqli_query($link, $sql))
+        if ($result = mysqli_query($conn, $sql))
             echo "<script>alert('id為" . $id . "的資料已刪除');</script>";
         else
             echo "<script>alert('刪除失敗');</script>";
@@ -62,7 +62,7 @@ if (isset($_GET['mode'])) {
                     $rc = 0;
                     include 'db_open.php';
                     //      echo "SELECT * FROM news".$varWhere;
-                    $result = mysqli_query($link, "SELECT * FROM news" . $varWhere);
+                    $result = mysqli_query($conn, "SELECT * FROM news" . $varWhere);
                     if (isset($_GET['page'])) //目前頁數
                     {
                         $page = $_GET['page'];

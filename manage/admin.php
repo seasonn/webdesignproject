@@ -17,7 +17,7 @@ if (isset($_GET['mode'])) {
         case "delete":
             $id = $_GET['id'];
             $sql = "delete from admin where aid=?";
-            $result = $link->prepare($sql);
+            $result = $conn->prepare($sql);
             $aid[] = $id;
             
             if ($result->execute($aid)) {
@@ -56,7 +56,7 @@ if (isset($_GET['mode'])) {
                 //   include "db_open.php";
 
                 $sql = "SELECT count(*) as rowcount from admin as a" . $varWhere;
-                $r = $link->query($sql);
+                $r = $conn->query($sql);
                 $rw = $r->fetch();
                 $total_records = $rw['rowcount'];
 
@@ -70,7 +70,7 @@ if (isset($_GET['mode'])) {
                 $offset = ($page - 1) * $records_per_page;
 
                 $sql = "select * from admin" . $varWhere . " LIMIT $offset, $records_per_page";
-                $result = $link->query($sql);
+                $result = $conn->query($sql);
                 ?>
                 <thead>
                     <tr style="border-top:1px solid #e7e7e7;">

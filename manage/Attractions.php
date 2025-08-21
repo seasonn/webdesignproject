@@ -16,9 +16,9 @@ if (isset($_GET['mode'])) {
         $id = $_GET['id'];
         require '../Connections/conn_db.php';
         $sql = "delete from product where p_id='$id'";
-        $result = $link->query($sql);
+        $result = $conn->query($sql);
         $sql = "select img_id,img_file from product_img where p_id='$id'";
-        $result = $link->query($sql);
+        $result = $conn->query($sql);
         while ($row = $result->fetch()) {
 
             if (file_exists("../product_img/" . $row['img_file'])) {
@@ -26,7 +26,7 @@ if (isset($_GET['mode'])) {
             }
 
             $sql = "delete from product_img where img_id=" . $row['img_id'];
-            $result2 = $link->query($sql);
+            $result2 = $conn->query($sql);
         }
         echo "<script>alert('id為" . $id . "的資料已刪除');</script>";
     }
@@ -47,7 +47,7 @@ if (isset($_GET['mode'])) {
                                 <?php
                                 include '../Connections/conn_db.php';
                                 $sql = "select * from pyclass where level=2 order by classid asc";
-                                $result = $link->query($sql);
+                                $result = $conn->query($sql);
                                 ?>
                                 <select size="1" name="Search" class="form-control">
                                     <option value="">全部</option>
@@ -88,7 +88,7 @@ if (isset($_GET['mode'])) {
 
                 $sql = "SELECT count(*) as rowcount from product as p" . $varWhere;
 
-                $r = $link->query($sql);
+                $r = $conn->query($sql);
                 $rw = $r->fetch();
                 $total_records = $rw['rowcount'];
                 $offset = ($page - 1) * $records_per_page; //指標偏移數  
@@ -96,7 +96,7 @@ if (isset($_GET['mode'])) {
 
                 $sql = "SELECT p.p_id,c.cname,p.p_name,p.classid FROM product as p left join pyclass as c  on p.classid=c.classid  $varWhere order by p_id LIMIT $offset, $records_per_page";
                 //   echo $sql;
-                $result = $link->query($sql);
+                $result = $conn->query($sql);
                 ?>
                 <thead>
                     <tr style="border-top:1px solid #e7e7e7;">
@@ -113,7 +113,7 @@ if (isset($_GET['mode'])) {
                         $sql = "SELECT  img_file from product_img where p_id=" . $row['p_id'];
                         //    echo $sql;
                         $imgfile = "";
-                        if ($r = $link->query($sql)) {
+                        if ($r = $conn->query($sql)) {
                             if ($rw = $r->fetch())
                                 $imgfile = $rw['img_file'];
                         }

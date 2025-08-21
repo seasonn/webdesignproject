@@ -3,7 +3,7 @@ include '../Connections/conn_db.php';
 if (isset($_GET['p_id'])) {
     $id = $_GET['p_id'];
     $sql = "select * from product where p_id='$id'";
-    $result = $link->query($sql);
+    $result = $conn->query($sql);
     $row = $result->fetch();
     $p_id = $row['p_id'];
     $classid = $row['classid'];
@@ -22,17 +22,17 @@ if (isset($_POST['p_id'])) {
     $p_open = $_POST['p_open'];
     $p_content = $_POST['p_content'];
     $sql = "update product set classid='$classid',p_name='$p_name',p_intro='$p_intro',p_price=$p_price,p_open=$p_open,p_content='$p_content' where p_id=$id";
-    if ($link->query($sql)) {
+    if ($conn->query($sql)) {
         if (!$_FILES['file']['error'][0] == 4) {
             print_r($_FILES['file']);
             $sql = "select img_id,img_file from product_img where p_id='$id'";
-            $result = $link->query($sql);
+            $result = $conn->query($sql);
             while ($row = $result->fetch()) {
                 if (file_exists("../product_img/" . $row['img_file'])) {
                     unlink("../product_img/" . $row['img_file']);
                 }
                 $sql = "delete from product_img where img_id=" . $row['img_id'];
-                $result2 = $link->query($sql);
+                $result2 = $conn->query($sql);
             }
 
             $images = $_FILES['file']; // 獲取上傳的文件
@@ -44,7 +44,7 @@ if (isset($_POST['p_id'])) {
                 $ext = explode('.', basename($filenames[$i])); //将文件名按 “.” 分割成数组
                 $target = $id . $zdx . "." . array_pop($ext); //$id+$zdx
                 $sql = "insert into product_img(p_id,img_file,sort) values ($id,'$target',$zdx)";
-                $link->query($sql);
+                $conn->query($sql);
 
                 move_uploaded_file($filetmps[$i], "../product_img/" . $target); //tmp_name 為上傳檔案的臨時位置，將其移動到需要上傳的路径
 
@@ -81,7 +81,7 @@ if (isset($_POST['p_id'])) {
                             <?php
                             include '../Connections/conn_db.php';
                             $sql = "select * from pyclass where level=2 order by classid asc";
-                            $result = $link->query($sql);
+                            $result = $conn->query($sql);
                             ?>
                             <select size="1" name="classid" class="form-control">
                                 <?php
@@ -162,7 +162,7 @@ if (isset($_POST['p_id'])) {
             initialPreview: [
                 <?php
                 $sql = "select img_file from product_img where p_id=$id order by sort asc";
-                $result = $link->query($sql);
+                $result = $conn->query($sql);
                 while ($row = $result->fetch()) {
                     echo "\"../product_img/" . $row['img_file'] . "\",\n";
                 }

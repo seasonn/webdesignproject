@@ -3,14 +3,14 @@
 if (isset($_GET['id'])) {
     $sid = $_GET['id'];
     $sql = "select * from programs where sid='$sid'";
-    $result = $link->query($sql);
+    $result = $conn->query($sql);
     $row = $result->fetch();
 } else {
     $sid = $_POST['sid'];
     $sname = $_POST['sname'];
     $program = $_POST['program'];
     $sql = "update programs set sname='$sname',program='$program' where sid='$sid'";
-    if ($result = $link->query($sql)) {
+    if ($result = $conn->query($sql)) {
         echo "<script>redirectDialog('program.php','資料修改成功');</script>";
     }
 }

@@ -3,7 +3,7 @@
 if (isset($_GET['id'])){
     $aid=$_GET['id'];
     $sql="select * from admin where aid='$aid'";
-    $result=$link->query($sql); 
+    $result=$conn->query($sql); 
     $row = $result->fetch();}
 else
 {
@@ -11,7 +11,7 @@ else
     $aname=$_POST['aname'];
     $passwd=$_POST['passwd'];
     $sql ="update admin set aname='$aname',passwd='$passwd' where aid='$aid'";
-    if ($result=$link->query($sql))
+    if ($result=$conn->query($sql))
     {
         echo "<script>redirectDialog('admin.php','資料修改成功');</script>";
     } 

@@ -8,13 +8,13 @@ $sname = str_replace("detailu.php", "", $sname);
 $sname = str_replace(".php", "", $sname);
 include "../Connections/conn_db.php";
 $sql = "select * from mright left join programs on mright.sid = programs.sid where mright.aid='" . $_SESSION['account'] . "' and programs.program='" . $sname . "'";
-$result = $link->query($sql);
+$result = $conn->query($sql);
 if (!$row = $result->fetch()) {
     if (basename($_SERVER['PHP_SELF']) != "index.php")
         header("Location: index.php");
 }
 $sql = "select * from admin where aid='" . $_SESSION['account'] . "'";
-$result = $link->query($sql);
+$result = $conn->query($sql);
 $row = $result->fetch();
 $aname = $row['aname'];
 ?>
@@ -92,7 +92,7 @@ $aname = $row['aname'];
                     <?php
                     $sql = "select sname,program from mright left join programs on mright.sid=programs.sid where aid='" . $_SESSION['account'] . "' order by mright.sid";
                     //        echo $sql;
-                    $result = $link->query($sql);
+                    $result = $conn->query($sql);
 
                     while ($row = $result->fetch()) { ?>
                         <li><a href="<?= $row['program'] . ".php" ?>"><i class="ti-control-record"></i><?= $row['sname'] ?></a></li>

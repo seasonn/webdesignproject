@@ -9,12 +9,12 @@ if (isset($_POST['sid'])) {
     $program = $_POST['program'];
     $sql = "select * from programs where sid='$sid'";
 
-    $result = $link->query($sql);
+    $result = $conn->query($sql);
     if ($row = $result->fetch()) {
         echo "<script>alert('程式帳號已存在,無法新增')</script>";
     } else {
         $sql = "insert into programs values('$sid','$sname','$program')";
-        $result = $link->query($sql);
+        $result = $conn->query($sql);
         if ($result) {
             echo "<script>alert('新增成功')</script>";
         } else

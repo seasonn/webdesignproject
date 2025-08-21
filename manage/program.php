@@ -17,7 +17,7 @@ if (isset($_GET['mode'])) {
         case "delete":
             $id = $_GET['id'];
             $sql = "delete from programs where sid='$id'";
-            if ($result = $link->query($sql)) {
+            if ($result = $conn->query($sql)) {
                 echo "<script>redirectDialog('program.php','ID: $id 的資料已刪除!');</script>";
             }
             break;
@@ -53,7 +53,7 @@ if (isset($_GET['mode'])) {
                 //   include "db_open.php";
 
                 $sql = "SELECT count(*) as rowcount from programs as a" . $varWhere;
-                $r = $link->query($sql);
+                $r = $conn->query($sql);
                 $rw = $r->fetch();
                 $total_records = $rw['rowcount'];
 
@@ -67,7 +67,7 @@ if (isset($_GET['mode'])) {
                 $offset = ($page - 1) * $records_per_page;
 
                 $sql = "select * from programs" . $varWhere . " LIMIT $offset, $records_per_page";
-                $result = $link->query($sql);
+                $result = $conn->query($sql);
                 ?>
                 <thead>
                     <tr style="border-top:1px solid #e7e7e7;">
