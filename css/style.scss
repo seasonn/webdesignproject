@@ -12,7 +12,7 @@ button#backToTop {
 nav {
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 1.2em;
-    // line-height: 1.5em;
+    transition: 0.4s top ease-in-out;
 
     a.navbar-brand {
         font-family: "Anton", sans-serif;
@@ -86,7 +86,7 @@ main {
 
                 img {
                     transition: 0.3s transform ease 0s;
-                    transform: scale(1.02);
+                    transform: scale(1.03);
                 }
             }
         }

@@ -11,6 +11,7 @@ button#backToTop {
 nav {
   font-family: "Noto Sans TC", sans-serif;
   font-size: 1.2em;
+  transition: 0.4s top ease-in-out;
 }
 nav a.navbar-brand {
   font-family: "Anton", sans-serif;
@@ -68,7 +69,7 @@ main div.product div.card:hover {
 }
 main div.product div.card:hover img {
   transition: 0.3s transform ease 0s;
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 main div.goods div.card div.col-4 img {
   transition: 0.2s box-shadow ease;
