@@ -29,7 +29,7 @@
         $pList01 = $conn->query($query);
         ?>
         <?php if ($pList01->rowCount() != 0) { ?>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            <div class="row row-cols-2 row-cols-md-4 g-4">
                 <?php
                 while ($pList01_Rows = $pList01->fetch()) { ?>
                     <div class="col">
